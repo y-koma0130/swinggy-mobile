@@ -17,8 +17,8 @@ export const SolidButton: FC<SoliduttonProps> = ({ label, onPress, color, isDisa
     <Button
       title={label}
       type='solid'
-      containerStyle={{ borderRadius: 20 }}
-      buttonStyle={{ backgroundColor: bgColor }}
+      containerStyle={{ borderRadius: 20, minWidth: 80 }}
+      buttonStyle={{ backgroundColor: bgColor, paddingHorizontal: 10 }}
       disabled={isDisabled}
       onPress={onPress}
     />

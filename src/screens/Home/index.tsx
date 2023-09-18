@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { BottomStackParamList } from '../../types/screens';
+import { View, StyleSheet } from 'react-native';
 import { SolidButton } from '../../components/buttons';
+import { ScreenNameInputSection } from '../../features/registrations/components/screenNames';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,14 +12,17 @@ const styles = StyleSheet.create({
 });
 
 export const Home: FC = () => {
-  const { navigate } = useNavigation<StackNavigationProp<BottomStackParamList>>();
+  // const { navigate } = useNavigation<StackNavigationProp<BottomStackParamList>>();
   return (
     <View style={styles.container}>
-      <Text>ホーム</Text>
-      <TouchableOpacity onPress={() => navigate('ROUND')}>
-        <Text>詳細画面へ遷移する</Text>
+      {/* <TouchableOpacity onPress={() => navigate('ROUND')}> */}
+      {/* </TouchableOpacity> */}
+      <View style={{ marginBottom: 10 }}>
+        <ScreenNameInputSection />
+      </View>
+      <View style={{ width: 240 }}>
         <SolidButton label='登録' color='PRIMARY' />
-      </TouchableOpacity>
+      </View>
     </View>
   );
 };
