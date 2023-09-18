@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Round() {
+export const Round: FC = () => {
   return (
     <View style={styles.container}>
       <Text>ラウンド</Text>
     </View>
   );
-}
+};

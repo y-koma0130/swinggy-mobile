@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './BottomTab';
+import { BottomTabNavigator } from './BottomTab';
 
-export default function MainRouter() {
+export const MainRouter: FC = () => {
   return (
     <NavigationContainer>
       <BottomTabNavigator />
     </NavigationContainer>
   );
-}
+};

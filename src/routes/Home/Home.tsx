@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { BottomStackParamList } from '../../types/screens';
 import { Home } from '../../screens';
 const Stack = createStackNavigator<BottomStackParamList>();
 
-function HomeNavigator() {
+export const HomeNavigator: FC = () => {
   return (
-    <Stack.Navigator
-      initialRouteName={'HOME'}
-      screenOptions={{ headerStyle: { borderWidth: 1 } }}>
+    <Stack.Navigator initialRouteName={'HOME'} screenOptions={{ headerStyle: { borderWidth: 1 } }}>
       <Stack.Screen
         name={'HOME'}
         component={Home}
@@ -25,6 +23,4 @@ function HomeNavigator() {
       /> */}
     </Stack.Navigator>
   );
-}
-
-export default HomeNavigator;
+};

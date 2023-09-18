@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Course() {
+export const Course: FC = () => {
   return (
     <View style={styles.container}>
       <Text>コース</Text>
     </View>
   );
-}
+};

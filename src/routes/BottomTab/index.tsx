@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Course, Round, Chat, Home } from '../../screens';
@@ -7,7 +7,7 @@ import { BottomStackParamList } from '../../types/screens';
 
 const Tab = createBottomTabNavigator<BottomStackParamList>();
 
-export default function BottomTabNavigator() {
+export const BottomTabNavigator: FC = () => {
   return (
     <Tab.Navigator
       sceneContainerStyle={{ borderWidth: 1, borderColor: COLORS.BLACK }}
@@ -75,4 +75,4 @@ export default function BottomTabNavigator() {
       />
     </Tab.Navigator>
   );
-}
+};

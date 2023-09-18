@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Home() {
+export const Home: FC = () => {
   const { navigate } = useNavigation<StackNavigationProp<BottomStackParamList>>();
   return (
     <View style={styles.container}>
@@ -24,4 +24,4 @@ export default function Home() {
       </TouchableOpacity>
     </View>
   );
-}
+};
