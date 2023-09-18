@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": [
+    "@react-native",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "@reactnativecommunity",
+    "plugin:react-native/all",
+    "plugin:jest/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "react", "react-native", "jest"],
+  "rules": {
+    "no-console": "warn"
+  }
+}

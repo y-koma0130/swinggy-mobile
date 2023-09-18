@@ -1,0 +1,6 @@
+export const COLORS = {
+  PRIMARY: '#26B536',
+  BG_PRIMARY: '#FF26B536',
+  INACTIVE: '#808080',
+  BLACK: '#333333',
+};
