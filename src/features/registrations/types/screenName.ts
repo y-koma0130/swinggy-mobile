@@ -9,10 +9,9 @@ export const screenNameSchema = z
 export type ScreenName = z.infer<typeof screenNameSchema>;
 
 /**
- *
  * 入力が ScreenName 型でない場合、エラーの配列を返却する
  */
-export const useIsScreenName = (value: string): string[] | undefined => {
+export const useIsScreenName = (value: unknown): string[] | undefined => {
   try {
     screenNameSchema.parse(value);
     return [];

@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Course, Round, Chat, Home } from '../../screens';
 import { COLORS } from '../../utils/constants/themes';
-import { BottomStackParamList } from '../../types/screens';
+import { BottomStackParamList } from '../../types/routes';
 
 const Tab = createBottomTabNavigator<BottomStackParamList>();
 
@@ -21,6 +21,7 @@ export const BottomTabNavigator: FC = () => {
         name={'HOME'}
         component={Home}
         options={{
+          title: 'ホーム',
           tabBarLabel: 'ホーム',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
@@ -35,6 +36,7 @@ export const BottomTabNavigator: FC = () => {
         name={'ROUND'}
         component={Round}
         options={{
+          title: 'ラウンド',
           tabBarLabel: 'ラウンド',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
@@ -49,6 +51,7 @@ export const BottomTabNavigator: FC = () => {
         name={'COURSE'}
         component={Course}
         options={{
+          title: 'コース',
           tabBarLabel: 'コース',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
@@ -63,6 +66,7 @@ export const BottomTabNavigator: FC = () => {
         name={'CHAT'}
         component={Chat}
         options={{
+          title: 'チャット',
           tabBarLabel: 'チャット',
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons

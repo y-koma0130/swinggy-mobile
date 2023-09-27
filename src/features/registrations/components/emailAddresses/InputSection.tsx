@@ -1,20 +1,21 @@
 import { FC, useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { BaseButton } from '../../../../components/buttons';
-import { useGetScreenNameInput } from '../../stores/userRegistrationInputStore';
-import { useScreenNameValidator } from '../../hooks/validations/screenName';
-import { ScreenNameInput } from './Input';
+import { useGetEmailAddressInput } from '../../stores/userRegistrationInputStore';
+import { useEmailAddressValidator } from '../../hooks/validations';
+import { EmailAddressInput } from '.';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
 import { PublicStackParamList } from '../../../../types/routes';
+import { useNavigation } from '@react-navigation/native';
 
 /**
- * スクリーンネームの登録セクション
+ * メールアドレスの登録セクション
  */
-export const ScreenNameInputSection: FC = () => {
-  const input = useGetScreenNameInput();
-  const validator = useScreenNameValidator();
+export const EmailAddressInputSection: FC = () => {
+  const input = useGetEmailAddressInput();
+  const validator = useEmailAddressValidator();
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
+  // TODO: 遷移先修正
   const { navigate } = useNavigation<StackNavigationProp<PublicStackParamList, 'EMAIL_ADDRESS'>>();
 
   const onPress = useCallback(() => {
@@ -29,7 +30,7 @@ export const ScreenNameInputSection: FC = () => {
   return (
     <View style={styles.sectionContainer}>
       <View style={styles.inputContainer}>
-        <ScreenNameInput errorMessages={errorMessages} />
+        <EmailAddressInput errorMessages={errorMessages} />
       </View>
       <View style={styles.button}>
         <BaseButton

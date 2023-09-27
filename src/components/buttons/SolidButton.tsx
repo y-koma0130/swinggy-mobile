@@ -15,15 +15,26 @@ type BaseButtonProps = {
  * ベースボタン
  */
 export const BaseButton: FC<BaseButtonProps> = ({ label, onPress, color, isDisabled, variant }) => {
-  const bgColor = useMemo<string>(() => {
+  const backgroundColor = useMemo<string>(() => {
     return color === 'PRIMARY' ? COLORS.PRIMARY : 'white';
+  }, [color]);
+  const borderColor = useMemo<string>(() => {
+    return color === 'PRIMARY' ? 'white' : COLORS.PRIMARY;
+  }, [color]);
+  const borderWidth = useMemo<number | undefined>(() => {
+    return color === 'PRIMARY' ? undefined : 1;
   }, [color]);
   return (
     <Button
       title={label}
       type={variant}
-      containerStyle={styles.container}
-      buttonStyle={{ backgroundColor: bgColor, ...styles.button }}
+      titleStyle={{ ...styles.label, color: borderColor }}
+      buttonStyle={{
+        ...styles.button,
+        backgroundColor,
+        borderColor,
+        borderWidth,
+      }}
       disabled={isDisabled}
       onPress={onPress}
     />
@@ -31,12 +42,12 @@ export const BaseButton: FC<BaseButtonProps> = ({ label, onPress, color, isDisab
 };
 
 const styles = StyleSheet.create({
-  container: {
-    borderRadius: 20,
-    minWidth: 80,
-  },
   button: {
     paddingHorizontal: 10,
     height: 40,
+    borderRadius: 20,
+  },
+  label: {
+    fontWeight: '400',
   },
 });

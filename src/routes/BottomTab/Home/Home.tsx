@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { BottomStackParamList } from '../../../types/screens';
+import { BottomStackParamList } from '../../../types/routes';
 import { Home } from '../../../screens';
+
 const Stack = createStackNavigator<BottomStackParamList>();
 
 export const HomeNavigator: FC = () => {

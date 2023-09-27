@@ -1,5 +1,5 @@
 import { FC, useMemo } from 'react';
-import { useSetScreeNameInput } from '../../stores/screenNameInput';
+import { useSetScreeNameInput } from '../../stores/userRegistrationInputStore';
 import { InputForm } from '../../../../components/forms';
 import { Text, View } from 'react-native';
 
