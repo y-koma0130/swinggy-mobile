@@ -15,8 +15,7 @@ export const EmailAddressInputSection: FC = () => {
   const input = useGetEmailAddressInput();
   const validator = useEmailAddressValidator();
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
-  // TODO: 遷移先修正
-  const { navigate } = useNavigation<StackNavigationProp<PublicStackParamList, 'EMAIL_ADDRESS'>>();
+  const { navigate } = useNavigation<StackNavigationProp<PublicStackParamList, 'PASSWORD'>>();
 
   const onPress = useCallback(() => {
     const errs = validator(input);
@@ -25,7 +24,7 @@ export const EmailAddressInputSection: FC = () => {
       return;
     }
     setErrorMessages([]);
-    navigate('EMAIL_ADDRESS');
+    navigate('PASSWORD');
   }, [input, setErrorMessages, errorMessages]);
   return (
     <View style={styles.sectionContainer}>

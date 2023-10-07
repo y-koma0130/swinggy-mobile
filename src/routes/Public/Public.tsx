@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { FC } from 'react';
-import { ScreenName } from '../../screens/Public/Registrations';
+import { Password, ScreenName } from '../../screens/Public/Registrations';
 import { Initial } from '../../screens/Public';
 import { PublicStackParamList } from '../../types/routes';
 import { EmailAddress } from '../../screens/Public/Registrations/emailAddress';
@@ -32,6 +32,13 @@ export const PublicNavigator: FC = () => {
         component={EmailAddress}
         options={{
           title: 'メールアドレス',
+        }}
+      />
+      <Stack.Screen
+        name={'PASSWORD'}
+        component={Password}
+        options={{
+          title: 'パスワード',
         }}
       />
     </Stack.Navigator>
