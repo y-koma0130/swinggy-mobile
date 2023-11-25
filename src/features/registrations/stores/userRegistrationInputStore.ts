@@ -102,3 +102,11 @@ export const useSetPasswordReInput = (): ((value: string) => void) => {
     });
   };
 };
+
+/**
+ * ユーザー情報のゲッター
+ */
+export const useUserInput = (): UserRegistration => {
+  const [input] = useAtom(userRegistrationInputStore);
+  return input;
+};

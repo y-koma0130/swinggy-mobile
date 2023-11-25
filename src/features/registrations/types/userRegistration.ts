@@ -1,5 +1,7 @@
 import { z } from 'zod';
-import { screenNameSchema, emailAddressSchema, passwordSchema } from '.';
+import { screenNameSchema } from './screenName';
+import { emailAddressSchema } from './emailAddress';
+import { passwordSchema } from './password';
 
 export const userRegistrationSchema = z.object({
   screenName: screenNameSchema,
